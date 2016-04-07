@@ -8,7 +8,7 @@ angular.module('app', [
     $stateProvider
       .state('feed', {
         url: '/feed',
-        templateUrl: 'app/components/feed/feedView.html'
+        templateUrl: 'app/components/feed/feedView.html',
       })
       .state('create', {
         url: '/create',
