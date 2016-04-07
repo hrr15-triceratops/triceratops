@@ -1,0 +1,21 @@
+{
+  "name": "triceratops",
+  "description": "This is our GREENFIELD project",
+  "main": "index.js",
+  "authors": [
+    "triceratops"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "awesome"
+  ],
+  "homepage": "https://github.com/hrr15-triceratops/triceratops.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/assets/libs",
+    "test",
+    "tests"
+  ]
+}
