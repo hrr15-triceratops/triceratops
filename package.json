@@ -1,0 +1,27 @@
+{
+  "name": "triceratops",
+  "version": "1.0.0",
+  "description": "This is our GREENFIELD project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hrr15-triceratops/triceratops.git"
+  },
+  "keywords": [
+    "awesome"
+  ],
+  "author": "triceratops",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hrr15-triceratops/triceratops/issues"
+  },
+  "homepage": "https://github.com/hrr15-triceratops/triceratops",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.11"
+  }
+}
