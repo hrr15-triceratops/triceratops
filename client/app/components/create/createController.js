@@ -1,4 +1,4 @@
-angular.module('app.create', ['create.service'])
+angular.module('app.create', ['create.factory'])
   .controller('createController', ['createFactory', function(createFactory) {
     this.createProject = function() {
       var data = {
@@ -9,8 +9,8 @@ angular.module('app.create', ['create.service'])
         project_contribs: this.contribs.split('\n'),
         project_images: this.images.split('\n'),
         project_rep: 0
-      }
+      };
       
       createFactory.createProject(data);
-    }
+    };
   }]);
