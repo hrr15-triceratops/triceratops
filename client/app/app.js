@@ -1,6 +1,7 @@
 angular.module('app', [
   'ui.router',
-  'app.create'
+  'app.create',
+  'app.feed'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -10,6 +11,8 @@ angular.module('app', [
       .state('feed', {
         url: '/feed',
         templateUrl: 'app/components/feed/feedView.html',
+        controller: 'feedController',
+        controllerAs: 'feed'
       })
       .state('create', {
         url: '/create',

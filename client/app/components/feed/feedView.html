@@ -1,3 +1,32 @@
 <div>
-  This is the feed view
+  <div id="left">
+    <img src="http://enditmovement.com/assets/images/x-red.png" alt=""height="140px" width="140px">
+  </div>
+  <div id="right">
+    <img src="http://www.clker.com/cliparts/D/z/C/2/q/E/check-mark-md.png" alt="" height="140px" width="140px">
+  </div>
+  <h1 class="text-center">{{feed.data.title}}</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-4 text-center" ng-repeat="img in feed.data.images track by $index">
+      <img src="{{img}}" alt="" class="img-rounded" height="200" width="300">
+    </div>
+  </div>
+  
+  
+
+  <div class="row">
+    <h3>{{feed.data.title}}</h3>
+    <p>{{feed.data.description}}</p>
+  </div>
+
+  <div class="text-center">
+    <h1 class="text-center">Contributors</h1>
+    <hr>
+    <div class="col-md-4" ng-repeat="contrib in feed.data.contributors">
+      <img src="https://d1fj9gpaeca6ia.cloudfront.net/static/global/images/no_profile_photo.png" alt="" class="img-circle" height="140px" width="140px">
+      <p>{{contrib}}</p>
+    </div>
+    
+  </div>
 </div>
