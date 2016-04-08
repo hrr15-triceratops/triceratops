@@ -2,13 +2,12 @@ angular.module('app.create', ['create.factory'])
   .controller('createController', ['createFactory', function(createFactory) {
     this.createProject = function() {
       var data = {
-        project_title: this.title,
-        project_description: this.description,
-        project_owner: this.owner,
-        project_location: this.location,
-        project_contribs: this.contribs.split('\n'),
-        project_images: this.images.split('\n'),
-        project_rep: 0
+        title: this.title,
+        description: this.description,
+        location: this.location,
+        owner: this.owner,
+        contributors: this.contribs.split('\n'),
+        images: this.images.split('\n')
       };
       
       createFactory.createProject(data);
