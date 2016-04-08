@@ -1,31 +1,30 @@
 <div>
-  <!-- TODO: Update function call here -->
   <p>Here we're in the create form field</p>
   <form>
     <div class="col-md-4">
       <label>Title</label>
-      <input type="text" class="form-control" placeholder="Enter title" ng-model="create.project_title">
+      <input type="text" class="form-control" placeholder="Enter title" ng-model="create.title" required>
 
       <label>Description</label>
-      <textarea class="form-control" rows="3"></textarea>
+      <textarea class="form-control" rows="3" ng-model="create.description"></textarea>
     </div>
 
     <div class="col-md-4">
       <label>Project Owner</label>
-      <input type="text" class="form-control" placeholder="Enter name">
+      <input type="text" class="form-control" placeholder="Enter name" ng-model="create.owner">
 
       <label>Contributors</label>
-      <textarea class="form-control" rows="3"></textarea>
+      <textarea class="form-control" rows="3" ng-model="create.contribs"></textarea>
 
-      <button ng-click="todo()" class="btn btn-lg btn-block btn-success">Submit</button>
+      <button ng-click="create.createProject()" class="btn btn-lg btn-block btn-success">Submit</button>
     </div>
 
     <div class="col-md-4">
       <label>Location</label>
-      <input type="text" class="form-control" placeholder="Where is it?">
+      <input type="text" class="form-control" placeholder="Where is it?" ng-model="create.location">
 
       <label>Images</label>
-      <textarea class="form-control" rows="3"></textarea>
+      <textarea class="form-control" rows="3" ng-model="create.images"></textarea>
     </div>
   </form>
 </div>
