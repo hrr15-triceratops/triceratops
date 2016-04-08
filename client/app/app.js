@@ -1,5 +1,6 @@
 angular.module('app', [
-  'ui.router'
+  'ui.router',
+  'app.create'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -12,6 +13,8 @@ angular.module('app', [
       })
       .state('create', {
         url: '/create',
-        templateUrl: 'app/components/create/createView.html'
+        templateUrl: 'app/components/create/createView.html',
+        controller: 'createController',
+        controllerAs: 'create'
       })
   });
