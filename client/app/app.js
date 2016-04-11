@@ -1,3 +1,15 @@
+// TODO: Move this to /libs/js ? it is not angular related
+$(function() {
+  // Initiate Bootstrap Material Theme
+  $.material.init();
+
+  // Handle active links
+  $('.nav a').on('click', function() {
+    $('.nav').find('.active').removeClass('active');
+    $(this).parent().addClass('active');
+  });
+});
+
 angular.module('app', [
   'ui.router',
   'app.create',

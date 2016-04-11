@@ -1,3 +1,15 @@
+body {
+  padding-top: 65px;
+}
+
+.description {
+  padding: 0 25px 0 25px
+}
+
+.container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #left {
   position: fixed;
   left: 5%;
