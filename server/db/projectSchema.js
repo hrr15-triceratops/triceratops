@@ -8,8 +8,8 @@ var projectSchema = new Schema({
   owner: { type: String, required: false },
   contributors: { type: Array, required: false }, 
   images: { type: Array, required: false }, 
-  posRep: { type: Number, required: true, default: 0 },
-  negRep: { type: Number, required: true, default: 0 }
+  posRep: { type: Number, required: false, default: 0 },
+  negRep: { type: Number, required: false, default: 0 }
 }, { timestamps: true });
 
 var Project = mongoose.model('Project', projectSchema);
