@@ -1,5 +1,7 @@
 angular.module('app.feed', [])
   .controller('feedController', [function() {
+    
+    // Dummy data so we can render something on the page
     this.data = [
     {
       title: 'My Little Project',
@@ -25,6 +27,8 @@ angular.module('app.feed', [])
     }
     ];
 
+    // Placeholder function to remove an item from data array
+    // This moves us on to the next project so we can render it on the view
     this.removeOne = function() {
       this.data.shift();
     };
