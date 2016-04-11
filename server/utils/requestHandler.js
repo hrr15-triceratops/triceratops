@@ -21,9 +21,12 @@ exports.create = function(req, res) {
       var project = new Project(projectData);
       // Save it in the DB
       project.save(function(err, project) {
-        if(err) res.send(err);
+        if(err) {
+          res.send(err);
+        } else {
         //return the project to the client for rendering
         res.send(project);
+        };
       });
     };
   });
