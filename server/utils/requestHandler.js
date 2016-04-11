@@ -38,14 +38,14 @@ exports.projects = function(req, res) {
   // var reqData = req.body;
 
   // Retrieve all the Projects in the DB
-  Project.find(function (err, projects) {
+  Project.find(function(err, projects) {
     if (err) {
       res.send(err);
     } else {
       // Send array with all project objects
       res.send(projects);  
     };
-  };
+  });
 };
 
 exports.contrib = function(req, res) {};
