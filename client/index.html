@@ -5,24 +5,47 @@
   <title>Document</title>
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/libs/bootstrap-material-design/dist/css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="/assets/libs/bootstrap-material-design/dist/css/ripples.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
 
   <!-- Libraries -->
+  <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="/assets/libs/angular/angular.min.js"></script>
   <script src="/assets/libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="/assets/libs/bootstrap-material-design/dist/js/material.min.js"></script>
+  <script src="/assets/libs/bootstrap-material-design/dist/js/ripples.min.js"></script>
+
   
   <!-- Angular Controllers/Factories -->
   <script src="/app/components/create/createController.js"></script>
   <script src="/app/components/create/createService.js"></script>
+  <script src="/app/components/feed/feedController.js"></script>
 
   <!-- Our Files -->
   <script src="/app/app.js"></script>
+
+  
+
 </head>
   <body ng-app="app">
-    <a href="#/feed">View Feed</a>
-    <a href="#/create">Create a project</a>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#/feed">View Feed</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/create">Create</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
-      <h1>Triceratops</h1>
-      <p>We are a pretty great team</p>
+      <div class="row">
+        
+      </div>
       <div ui-view>
     </div>
   </body>
