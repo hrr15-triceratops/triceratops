@@ -8,6 +8,7 @@ $(function() {
     $('.nav').find('.active').removeClass('active');
     $(this).parent().addClass('active');
   });
+
 });
 
 /* Main Angular application */
