@@ -3,7 +3,7 @@ angular.module('create.factory', [])
     var createProject = function(data) {
       return $http({
         method: 'POST',
-        url: '/api/users',
+        url: '/create',
         data: data
       });
     };
