@@ -9,14 +9,6 @@ $(function() {
     $(this).parent().addClass('active');
   });
 
-  // This will change the src for any broken image to the placeholder img.
-  // $('body').on('error', 'img', function() {
-  //   $(this).attr('src', 'http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg');
-  // });
-  // $('img').error(function(){
-  //   $(this).attr('src', 'http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg');
-  // });
-
 });
 
 /* Main Angular application */
