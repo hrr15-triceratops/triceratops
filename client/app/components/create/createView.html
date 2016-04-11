@@ -3,59 +3,65 @@
 <div class="container" id="createForm">
   <form class="form-horizontal">
     <fieldset>
-      <legend>Create a project</legend>
+      <legend class="text-center">Create</legend>
+      <!-- Title input field -->
       <div class="form-group">
         <label for="inputTitle" class="col-md-2 control-label">Title</label>
         <div class="col-md-10">
           <input type="text" class="form-control" id="inputTitle" placeholder="Title" ng-model="create.title">
         </div>
       </div>
-
+  
+      <!-- Project Owner input field -->
       <div class="form-group">
         <label for="inputOwner" class="col-md-2 control-label">Owner</label>
         <div class="col-md-10">
           <input type="text" class="form-control" id="inputOwner" placeholder="Project Owner" ng-model="create.owner">
         </div>
       </div>
+      
+      <!-- Location input field -->
+      <div class="form-group">
+        <label for="inputLocation" class="col-md-2 control-label">Location</label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" id="inputLocation" placeholder="Location" ng-model="create.location">
+        </div>
+      </div>
+      
 
+      <!-- Description input field -->
       <div class="form-group">
         <label for="inputDescription" class="col-md-2 control-label">Description</label>
         <div class="col-md-10">
           <textarea class="form-control" row="3" id="inputDescription"ng-model="create.description"></textarea>
         </div>
       </div>
+      
+
+      <!-- Contributors input field -->
+      <div class="form-group">
+        <label for="inputContribs" class="col-md-2 control-label">Contributors</label>
+        <div class="col-md-10">
+          <textarea class="form-control" row="3" id="inputContribs"ng-model="create.contribs"></textarea>
+        </div>
+      </div>
+      
+
+      <!-- Images input field -->
+      <div class="form-group">
+        <label for="inputImages" class="col-md-2 control-label">Images</label>
+        <div class="col-md-10">
+          <textarea class="form-control" row="3" id="inputImages"ng-model="create.images"></textarea>
+        </div>
+      </div>
+      
+
+      <!-- Submit button -->
+      <div class="form-group">
+        <div class="text-center">
+          <button type="submit" class="btn btn-raised btn-primary" ng-click="create.createProject()">Submit</button>
+        </div>
+      </div>
     </fieldset>
-  </form>
-</div>
-
-
-<!-- 
-  <p>Here we're in the create form field</p>
-  <form>
-    <div class="col-md-4">
-      <label>Title</label>
-      <input type="text" class="form-control" placeholder="Enter title" ng-model="create.title" required>
-
-      <label>Description</label>
-      <textarea class="form-control" rows="3" ng-model="create.description"></textarea>
-    </div>
-
-    <div class="col-md-4">
-      <label>Project Owner</label>
-      <input type="text" class="form-control" placeholder="Enter name" ng-model="create.owner">
-
-      <label>Contributors</label>
-      <textarea class="form-control" rows="3" ng-model="create.contribs"></textarea>
-
-      <button ng-click="create.createProject()" class="btn btn-lg btn-block btn-success">Submit</button>
-    </div>
-
-    <div class="col-md-4">
-      <label>Location</label>
-      <input type="text" class="form-control" placeholder="Where is it?" ng-model="create.location">
-
-      <label>Images</label>
-      <textarea class="form-control" rows="3" ng-model="create.images"></textarea>
-    </div>
   </form>
 </div>
