@@ -32,7 +32,22 @@ exports.create = function(req, res) {
   });
 };
 
+//Helper function that adds a new Project to the DB
+exports.projects = function(req, res) {
+  // Potentially send data about the users geoInfo
+  // var reqData = req.body;
+
+  // Retrieve all the Projects in the DB
+  Project.find(function (err, projects) {
+    if (err) {
+      res.send(err);
+    } else {
+      // Send array with all project objects
+      res.send(projects);  
+    };
+  };
+};
+
 exports.contrib = function(req, res) {};
 exports.rep = function(req, res) {};
-exports.projects = function(req, res) {};
 
