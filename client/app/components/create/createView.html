@@ -1,5 +1,35 @@
+
 <!-- Begin Project Creation View -->
-<div>
+<div class="container" id="createForm">
+  <form class="form-horizontal">
+    <fieldset>
+      <legend>Create a project</legend>
+      <div class="form-group">
+        <label for="inputTitle" class="col-md-2 control-label">Title</label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" id="inputTitle" placeholder="Title" ng-model="create.title">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputOwner" class="col-md-2 control-label">Owner</label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" id="inputOwner" placeholder="Project Owner" ng-model="create.owner">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputDescription" class="col-md-2 control-label">Description</label>
+        <div class="col-md-10">
+          <textarea class="form-control" row="3" id="inputDescription"ng-model="create.description"></textarea>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+
+<!-- 
   <p>Here we're in the create form field</p>
   <form>
     <div class="col-md-4">
@@ -29,4 +59,3 @@
     </div>
   </form>
 </div>
-<!-- End Project Creation View -->
