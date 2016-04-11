@@ -14,8 +14,8 @@ app.use(bodyParser.json());
 //Do specific things for specific requests
 //Do them in utilities
 app.post('/create', utils.create);
-app.post('/contrib', utils.contrib);
-app.post('/rep', utils.rep);
+app.put('/contrib', utils.contrib);
+app.put('/rep', utils.rep);
 app.get('/projects', utils.projects);
 
 //Get server going
