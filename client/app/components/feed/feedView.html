@@ -1,21 +1,25 @@
+<!-- Up / Down Vote Begin -->
 <div id="left">
   <img src="http://enditmovement.com/assets/images/x-red.png" alt=""height="140px" width="140px">
 </div>
 <div id="right">
   <img src="http://www.clker.com/cliparts/D/z/C/2/q/E/check-mark-md.png" alt="" height="140px" width="140px" ng-click="feed.removeOne()">
 </div>
+<!-- Up / Down Vote End -->
 
+<!-- Begin Feed View -->
 <div class="feed">
   <h1 class="text-center">{{feed.data[0].title}}</h1>
   <hr>
   <div class="row">
+    <!-- Repeat for every image, limited to 2. -->
     <div class="col-md-6 text-center" ng-repeat="img in feed.data[0].images | limitTo: 2 track by $index">
       <img src="{{img}}" alt="" class="img-rounded" height="70%" width="100%"> 
     </div>
   </div>
   
   
-
+  <!-- Pull in project description -->
   <div class="row description">
     <h3>{{feed.data[0].title}}</h3>
     <p>{{feed.data[0].description}}</p>
@@ -24,6 +28,7 @@
   <div class="text-center">
     <h1 class="text-center">Contributors</h1>
     <hr>
+    <!-- Repeat for every contributor, limited to 3. -->
     <div class="col-md-4" ng-repeat="contrib in feed.data[0].contributors">
       <img src="https://d1fj9gpaeca6ia.cloudfront.net/static/global/images/no_profile_photo.png" alt="" class="img-circle" height="140px" width="140px">
       <p>{{contrib}}</p>
@@ -31,3 +36,4 @@
     
   </div>
 </div>
+<!-- End Feed View -->

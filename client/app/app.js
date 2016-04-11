@@ -10,6 +10,7 @@ $(function() {
   });
 });
 
+/* Main Angular application */
 angular.module('app', [
   'ui.router',
   'app.create',
@@ -17,6 +18,7 @@ angular.module('app', [
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
+    // Route users to /feed if they visit a link that doesn't have a route.
     $urlRouterProvider.otherwise('/feed');
 
     $stateProvider
