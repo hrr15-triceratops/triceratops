@@ -44,6 +44,7 @@ angular.module('app', [
         url: '/signup',
         templateUrl: 'app/components/signup/signup.html'
       });
+<<<<<<< HEAD
   })
 
   .directive('errSrc', function() {
@@ -56,4 +57,6 @@ angular.module('app', [
         });
       }
     };
+=======
+>>>>>>> 626e7bb523b8393a9530fc795eb8442a7988cc6a
   });
