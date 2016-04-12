@@ -1,4 +1,8 @@
 // TODO: Move this to /libs/js ? it is not angular related
+$('body').on('error', 'img', function() {
+  console.log('ERROR!');
+});
+
 $(function() {
   // Initiate Bootstrap Material Theme
   $.material.init();
@@ -39,4 +43,16 @@ angular.module('app', [
         url: '/signup',
         templateUrl: 'app/components/signup/signup.html'
       });
+  })
+
+  .directive('errSrc', function() {
+    return {
+      link: function(scope, element, attrs) {
+        element.bind('error', function() {
+          if (attrs.src !== attrs.errSrc) {
+            attrs.$set('src', attrs.errSrc);
+          }
+        });
+      }
+    };
   });
