@@ -1,6 +1,6 @@
 <!-- Up / Down Vote Begin -->
 <div class="col-md-2 col-xs-2" id="left">
-    <img src="http://enditmovement.com/assets/images/x-red.png" alt=""height="140px" width="140px" ng-click="feed.deRep()" class="img-responsive">
+    <img src="http://enditmovement.com/assets/images/x-red.png" height="140px" width="140px" ng-click="feed.deRep()" class="img-responsive pull-left">
 </div>
 
 <!-- Up / Down Vote End -->
@@ -12,7 +12,7 @@
   <div class="row">
     <!-- Repeat for every image, limited to 2. -->
     <div class="col-md-6 text-center" ng-repeat="img in feed.projects[0].images | limitTo: 2 track by $index">
-      <img ng-src="{{img}}" err-src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg" alt="" class="img-rounded" height="70%" width="100%"> 
+      <img ng-src="{{img}}" err-src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg" class="img-rounded" height="70%" width="100%"> 
     </div>
   </div>
   
@@ -40,5 +40,5 @@
 <!-- End Feed View -->
 
 <div class="col-md-2 col-xs-2" id="right">
-  <img src="http://www.clker.com/cliparts/D/z/C/2/q/E/check-mark-md.png" alt="" height="140px" width="140px" ng-click="feed.rep()" class="img-responsive">
+  <img src="http://www.clker.com/cliparts/D/z/C/2/q/E/check-mark-md.png" height="140px" width="140px" ng-click="feed.rep()" class="img-responsive pull-right">
 </div>
