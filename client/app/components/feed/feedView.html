@@ -14,7 +14,7 @@
   <div class="row">
     <!-- Repeat for every image, limited to 2. -->
     <div class="col-md-6 text-center" ng-repeat="img in feed.projects[0].images | limitTo: 2 track by $index">
-      <img src="{{img}}" alt="" class="img-rounded" height="70%" width="100%" onerror="this.src='http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg'"> 
+      <img ng-src="{{img}}" err-src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg" alt="" class="img-rounded" height="70%" width="100%"> 
     </div>
   </div>
   
