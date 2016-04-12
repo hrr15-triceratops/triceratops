@@ -3,6 +3,17 @@ var db = require('../index.js');
 //Require our User and Project objects. 
 var Project = require('../db/projectSchema');
 var User = require('../db/userSchema');
+var passport = require('passport');
+
+exports.auth = function(req, res, next) {
+  var info = req.info;
+  var user = req.user;
+  console.log(req);
+  if(info) {
+    res.send(info);
+  }
+  res.send(user);
+};
 
 //Helper function that adds a new Project to the DB
 exports.create = function(req, res) {
