@@ -18,8 +18,17 @@ angular.module('feed.factory', [])
       });
     };
 
+    var addContrib = function(data) {
+      return $http({
+        method: 'PUT',
+        url: '/contrib',
+        data: data
+      });
+    };
+
     return {
       getProjects: getProjects,
-      repProject: repProject
+      repProject: repProject,
+      addContrib: addContrib
     };
   });
