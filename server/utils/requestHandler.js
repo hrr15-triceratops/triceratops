@@ -153,3 +153,26 @@ exports.contrib = function(req, res) {
   // });
 };
 
+exports.signup = function(req, res) {
+  var userEmail = req.body.email;
+  var userData = req.body;
+
+  // Find if email address is taken
+  // Find User
+  User.findOne({ email: userEmail }, function(err, user) {
+    if(err) {
+      res.send(err);
+    } else if (user) {
+      res.send({message: 'Email address already in use'});
+    } else {
+      var user = new User(userData);
+      user.save(function(err) {
+        if(err) {
+          res.send(err);
+        } else {
+          res.send(user);
+        };
+      });
+    };
+  });
+};
