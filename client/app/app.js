@@ -35,4 +35,8 @@ angular.module('app', [
         controller: 'createController',
         controllerAs: 'create'
       })
+      .state('signup', {
+        url: '/signup',
+        templateUrl: 'app/components/signup/signup.html'
+      });
   });
