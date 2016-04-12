@@ -12,6 +12,7 @@ body {
 
 .container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 20px;
 }
 
 #left {
@@ -24,4 +25,25 @@ body {
   position: fixed;
   left: 85%;
   bottom: 50%;
+}
+
+/**** sign up form ******/
+.sign-up {
+  margin: 20px auto;
+  width: 600px;
+}
+.sign-up .form-horizontal .control-label {
+  text-align: left;
+}
+.form-group {
+  padding-bottom: 0;
+  margin: 10px 0 0 0;
+
+}
+
+.sign-up .btn, .input-group-btn .btn {
+  border: 2px solid #009688;
+}
+.sign-up p {
+  color: #BDBDBD;
 }
