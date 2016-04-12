@@ -43,9 +43,17 @@ angular.module('app.feed', ['feed.factory'])
         });
     };
 
-    // Placeholder function to remove an item from data array
-    // This moves us on to the next project so we can render it on the view
-    this.removeOne = function() {
-      this.projects.shift();
+    // function that adds a contributor
+    this.addContrib = function() {
+      var data = {
+        projId: self.projects[0]._id,
+        userId: 0 // TODO: CHANGE THIS TO THE CORRECT USERID
+      };
+
+      feedFactory.addContrib(data)
+        .then(function(project) {
+          console.log(project.data); // Log the data so we can see that it worked.
+        });
     };
+
   }]);
