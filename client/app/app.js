@@ -19,7 +19,8 @@ $(function() {
 angular.module('app', [
   'ui.router',
   'app.create',
-  'app.feed'
+  'app.feed',
+  'ngAutocomplete'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {

@@ -1,42 +1,44 @@
-<div class="sign-up">
+<div class="container sign-up">
   <form class="form-horizontal">
-  <fieldset>
-    <!-- <h4>Sign Up</h4>  -->
-    <div class="form-group">
-      <label for="inputFirstName" class="col-md-2 control-label">First Name</label>
-
-      <div class="col-md-6">
-        <input type="text" class="form-control" id="inputFirstName">
+    <fieldset>
+      <h4>Sign Up</h4> 
+      <div class="form-group">
+        <label for="inputFirstName" class="col-md-2 control-label">First Name</label>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="inputFirstName" placeholder='Enter First Name'>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="inputLastName" class="col-md-2 control-label">Last Name</label>
-
-      <div class="col-md-6">
-        <input type="text" class="form-control" id="inputLastName">
+      <div class="form-group">
+        <label for="inputLastName" class="col-md-2 control-label" >Last Name</label>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="inputLastName" placeholder='Enter Last Name'>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="inputEmail" class="col-md-2 control-label">Email</label>
-
-      <div class="col-md-6">
-        <input type="email" class="form-control" id="inputEmail">
+      <div class="form-group">
+        <label for="inputEmail" class="col-md-2 control-label" >Email</label>
+        <div class="col-md-6">
+          <input type="email" class="form-control" id="inputEmail" placeholder='Enter Email Address'>
+        </div>
       </div>
-    </div>
-
-    <div class="form-group">
-      <label for="inputPassword" class="col-md-2 control-label">Password</label>
-
-      <div class="col-md-6">
-        <input type="password" class="form-control" id="inputPassword">
+      <div class="form-group">
+        <label for="inputLocation" class="col-md-2 control-label">Location</label>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="inputLocation" ng-autocomplete ng-model="autoComplete">
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <div class="col-md-6 col-md-offset-4">
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+      <div class="form-group">
+        <label for="inputPassword" class="col-md-2 control-label">Password</label>
+        <div class="col-md-6">
+          <input type="password" class="form-control" id="inputPassword"  placeholder='Enter Password'>
+        </div>
       </div>
-    </div>
-  </fieldset>
-</form>
-      <p class='col-md-offset-2'>Already have an account? <a href="#signin">Sign In</a></p>
+
+      <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+          <button type="submit" class="btn btn-primary">SIGN UP</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  <p class='col-md-offset-2'>Already have an account? <a href="#/signin">Sign In</a></p>
 </div>
