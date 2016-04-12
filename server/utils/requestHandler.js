@@ -106,5 +106,50 @@ exports.rep = function(req, res) {
 };
 
 //Helper function that adds user as a contributor to a particular project
-exports.contrib = function(req, res) {};
+exports.contrib = function(req, res) {
+  // req.body contains projectId and userId
+  var projId = req.body.projId;
+  var userId = req.body.userId;
+  // PROJECT UPDATES
+  // Find the project in db
+  Project.findOne({ _id: projId }, function(err, project) {
+    if(err) {
+      res.send(err);
+    } else {
+      // Add 1 to posRep
+      project.posRep += 1;
+      // Add userId to contributors
+      project.contributors.push(userId);
+      project.save(function(err) {
+        res.send(project);
+      });
+    };
+  });
+
+  // USER UPDATES
+  // Find the user in the db
+  // User.findOne({ _id: userId }, function(err, user) {
+  //   if(err) {
+  //     res.send(err);
+  //   } else {
+  //     // Add project to the users array
+  //     var projects = user.projects;
+  //     // Check if user projects contain projId
+  //     projects.forEach(function(project) {
+  //       // If so, change contrib --> true
+  //       if(project._id === projId) {
+  //         project.contrib = true;
+  //         user.save(function(err) {
+  //           res.send(user);
+  //         });
+  //       };
+  //     });
+  //     // else, add projectId to projects and set contrib to true
+  //     user.projects.push({ id: projId, contrib: true });
+  //     user.save(function(err) {
+  //       res.send(user);
+  //     });
+  //   };
+  // });
+};
 
