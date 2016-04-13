@@ -3,6 +3,7 @@ angular.module('app.feed', ['feed.factory', 'ngCookies'])
     // Hold onto context
     var self = this;
     var uid = $cookies.getAll().id;
+    var name = $cookies.getAll().name;
 
     // List of projects
     this.projects = [];
@@ -48,7 +49,8 @@ angular.module('app.feed', ['feed.factory', 'ngCookies'])
     this.addContrib = function() {
       var data = {
         projId: self.projects[0]._id,
-        userId: uid 
+        userId: uid,
+        name: name
       };
 
       feedFactory.addContrib(data)

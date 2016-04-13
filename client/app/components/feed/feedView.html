@@ -27,10 +27,11 @@
     <h1 class="text-center">Contributors</h1>
     <hr>
     <!-- Repeat for every contributor, limited to 3. -->
-    <div class="col-md-4" ng-repeat="contrib in feed.projects[0].contributors">
+    <div class="col-md-4" ng-repeat="contrib in feed.projects[0].contributors | limitTo: 3 track by $index">
       <img src="https://d1fj9gpaeca6ia.cloudfront.net/static/global/images/no_profile_photo.png" alt="" class="img-circle" height="140px" width="140px">
       <p>{{contrib}}</p>
     </div>
+    Join us and {{feed.projects[0].contributors.length - 3}} more contributors!
   </div>
 
   <div class="text-center">
