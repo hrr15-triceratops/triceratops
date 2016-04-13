@@ -18,8 +18,12 @@ $(function() {
 /* Main Angular application */
 angular.module('app', [
   'ui.router',
+  'ngCookies',
   'app.create',
-  'app.feed'
+  'app.feed',
+  'ngAutocomplete',
+  'app.signIn'
+
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -31,18 +35,43 @@ angular.module('app', [
         url: '/feed',
         templateUrl: 'app/components/feed/feedView.html',
         controller: 'feedController',
-        controllerAs: 'feed'
+        controllerAs: 'feed',
+        auth: true
       })
       .state('create', {
         url: '/create',
         templateUrl: 'app/components/create/createView.html',
         controller: 'createController',
-        controllerAs: 'create'
+        controllerAs: 'create',
+        auth: true
       })
       .state('signup', {
         url: '/signup',
-        templateUrl: 'app/components/signup/signup.html'
+        templateUrl: 'app/components/signup/signup.html',
+        auth: false
+      })
+      .state('signin', {
+        url: '/signin',
+        templateUrl: 'app/components/signin/signInView.html',
+        controller: 'signInController',
+        controllerAs: 'signIn',
+        auth: false
       });
+  })
+
+  // Check to see if the user is authenticated
+  .run(function($rootScope, $state, $cookies) {
+
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+      var auth = toState.auth;
+      var email = $cookies.getAll().email;
+
+      if (auth && !email) {
+        event.preventDefault();
+        $state.go('signin');
+      }
+    });
+
   })
 
   .directive('errSrc', function() {
