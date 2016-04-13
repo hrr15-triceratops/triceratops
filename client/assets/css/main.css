@@ -30,7 +30,7 @@ body {
   margin: 20px auto;
   width: 600px;
 }
-.sign-up .form-horizontal .control-label {
+.container .form-horizontal .control-label {
   text-align: left;
 }
 .form-group {
