@@ -4,7 +4,7 @@ var Project = require('./db/projectSchema');
 var utils = require('./utils/requestHandler');
 //Database
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/triceratops');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/triceratops');
 
 //Authentication
 var passport = require('passport');
