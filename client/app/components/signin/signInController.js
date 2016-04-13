@@ -13,6 +13,7 @@ angular.module('app.signIn', ['signIn.factory', 'ngCookies'])
           if(!user) {
             return console.log('Login failed');
           }
+          $cookies.put('id', user.data._id);
           $cookies.put('email', user.data.email);
         });
     };

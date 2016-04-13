@@ -1,7 +1,8 @@
-angular.module('app.feed', ['feed.factory'])
-  .controller('feedController', ['feedFactory', function(feedFactory) {
+angular.module('app.feed', ['feed.factory', 'ngCookies'])
+  .controller('feedController', ['feedFactory', '$cookies', function(feedFactory, $cookies) {
     // Hold onto context
     var self = this;
+    var uid = $cookies.getAll().id;
 
     // List of projects
     this.projects = [];
@@ -18,7 +19,7 @@ angular.module('app.feed', ['feed.factory'])
       var data = {
         projId: self.projects[0]._id,
         rep: true,
-        userId: 0 // TODO: REPLACE THIS W/ USERID
+        userId: uid 
       };
       
       feedFactory.repProject(data)
@@ -33,7 +34,7 @@ angular.module('app.feed', ['feed.factory'])
       var data = {
         projId: self.projects[0]._id,
         rep: false,
-        userId: 0 // TODO: REPLACE THIS W/ USERID
+        userId: uid 
       };
       
       feedFactory.repProject(data)
@@ -47,7 +48,7 @@ angular.module('app.feed', ['feed.factory'])
     this.addContrib = function() {
       var data = {
         projId: self.projects[0]._id,
-        userId: 0 // TODO: CHANGE THIS TO THE CORRECT USERID
+        userId: uid 
       };
 
       feedFactory.addContrib(data)
