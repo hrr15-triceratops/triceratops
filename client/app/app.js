@@ -22,7 +22,8 @@ angular.module('app', [
   'app.create',
   'app.feed',
   'ngAutocomplete',
-  'app.signIn'
+  'app.signIn',
+  'app.signUp'
 
   ])
 
@@ -47,7 +48,9 @@ angular.module('app', [
       })
       .state('signup', {
         url: '/signup',
-        templateUrl: 'app/components/signup/signup.html',
+        templateUrl: 'app/components/signup/signUpView.html',
+        controller: 'signUpController',
+        controllerAs: 'signUp',
         auth: false
       })
       .state('signin', {
