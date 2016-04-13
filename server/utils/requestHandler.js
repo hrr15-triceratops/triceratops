@@ -113,9 +113,11 @@ exports.rep = function(req, res) {
 
 //Helper function that adds user as a contributor to a particular project
 exports.contrib = function(req, res) {
-  // req.body contains projectId and userId
+  // req.body contains projectId, userId & name
   var projId = req.body.projId;
   var userId = req.body.userId;
+  var name = req.body.name;
+
   // PROJECT UPDATES
   // Find the project in db
   Project.findOne({ _id: projId }, function(err, project) {
@@ -124,8 +126,8 @@ exports.contrib = function(req, res) {
     } else {
       // Add 1 to posRep
       project.posRep += 1;
-      // Add userId to contributors
-      project.contributors.push(userId);
+      // Add name to contributors
+      project.contributors.push(name);
       project.save(function(err) {
         console.log('Project saved!');
         // res.send(project);
