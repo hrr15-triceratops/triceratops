@@ -68,9 +68,11 @@ exports.rep = function(req, res) {
   // Function to alter reputation on a project
   // User for both rep and contrib logic
   var updateContrib = function(req, res) {
+    console.log(req.body);
     var projId = req.body.projId;
     var projRep = req.body.rep;
     var userId = req.body.userId;
+    console.log(userId);
 
     // Find the project in db
     Project.findOne({ _id: projId }, function(err, project) {
@@ -82,34 +84,27 @@ exports.rep = function(req, res) {
           // Add 1 to posRep
           project.posRep += 1;
           project.save(function(err) {
-            res.send(project);
+            console.log('Project saved');
           });
         } else {
           // Add 1 to negRep
           project.negRep += 1;
           project.save(function(err) {
-            res.send(project);
+            console.log('Project saved');
           });
         };
       };
     });
-  };
     // Find the user in the db
-  //   User.findOne({ _id: userId }, function(err, user) {
-  //     if(err) {
-  //       res.send(err);
-  //     } else {
-  //       // Add project to the users array
-  //       if(user.projects) {
-  //         user.projects.push({ id: projId, contrib: false });
-  //         res.send(user); //TODO: Update to make more useful after refactor to utils
-  //       } else {
-  //         user.projects = [{ id: projId, contrib: false }];
-  //         res.send(user); //TODO: Update to make more useful after refactor to utils
-  //       };
-  //     };
-  //   });
-  // };
+    User.findOne({ _id: userId }, function(err, user) {
+      if(err) {
+        res.send(err);
+      } else {
+          user.projects.push({ id: projId, contrib: false });
+          res.send(user); //TODO: Update to make more useful after refactor to utils
+      }
+    });
+  };
 
   // Call updateContrib
   updateContrib(req, res);
@@ -118,9 +113,11 @@ exports.rep = function(req, res) {
 
 //Helper function that adds user as a contributor to a particular project
 exports.contrib = function(req, res) {
-  // req.body contains projectId and userId
+  // req.body contains projectId, userId & name
   var projId = req.body.projId;
   var userId = req.body.userId;
+  var name = req.body.name;
+
   // PROJECT UPDATES
   // Find the project in db
   Project.findOne({ _id: projId }, function(err, project) {
@@ -129,39 +126,40 @@ exports.contrib = function(req, res) {
     } else {
       // Add 1 to posRep
       project.posRep += 1;
-      // Add userId to contributors
-      project.contributors.push(userId);
+      // Add name to contributors
+      project.contributors.push(name);
       project.save(function(err) {
-        res.send(project);
+        console.log('Project saved!');
+        // res.send(project);
       });
-    };
-  });
+    }
 
   // USER UPDATES
   // Find the user in the db
-  // User.findOne({ _id: userId }, function(err, user) {
-  //   if(err) {
-  //     res.send(err);
-  //   } else {
-  //     // Add project to the users array
-  //     var projects = user.projects;
-  //     // Check if user projects contain projId
-  //     projects.forEach(function(project) {
-  //       // If so, change contrib --> true
-  //       if(project._id === projId) {
-  //         project.contrib = true;
-  //         user.save(function(err) {
-  //           res.send(user);
-  //         });
-  //       };
-  //     });
-  //     // else, add projectId to projects and set contrib to true
-  //     user.projects.push({ id: projId, contrib: true });
-  //     user.save(function(err) {
-  //       res.send(user);
-  //     });
-  //   };
-  // });
+  User.findOne({ _id: userId }, function(err, user) {
+    if(err) {
+      res.send(err);
+    } else {
+      // Add project to the users array
+      var projects = user.projects;
+      // Check if user projects contain projId
+      projects.forEach(function(project) {
+        // If so, change contrib --> true
+        if(project._id === projId) {
+          project.contrib = true;
+          user.save(function(err) {
+            res.send(user);
+          });
+        }
+      });
+      // else, add projectId to projects and set contrib to true
+      user.projects.push({ id: projId, contrib: true });
+      user.save(function(err) {
+        res.send(user);
+      });
+    }
+  });
+  });
 };
 
 exports.signup = function(req, res) {
