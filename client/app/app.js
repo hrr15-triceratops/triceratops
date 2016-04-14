@@ -23,7 +23,8 @@ angular.module('app', [
   'app.feed',
   'ngAutocomplete',
   'app.signIn',
-  'app.signUp'
+  'app.signUp', 
+  'app.dashboard'
 
   ])
 
@@ -62,7 +63,10 @@ angular.module('app', [
       })
       .state('dashboard', {
         url: '/dashboard',
-        templateUrl: 'app/components/dashboard/dashboard.html'
+        templateUrl: 'app/components/dashboard/dashboardView.html',
+        controller: 'dashboardController',
+        controllerAs: 'dashboard',
+        auth: true
       });
   })
 
