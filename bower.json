@@ -1,15 +1,15 @@
 {
-  "name": "triceratops",
-  "description": "This is our GREENFIELD project",
+  "name": "webloc",
+  "description": "A community to find and host projects",
   "main": "index.js",
   "authors": [
-    "triceratops"
+    "webloc"
   ],
   "license": "ISC",
   "keywords": [
     "awesome"
   ],
-  "homepage": "https://github.com/hrr15-triceratops/triceratops.git",
+  "homepage": "https://github.com/we-bloc/webloc.git",
   "ignore": [
     "**/.*",
     "node_modules",
