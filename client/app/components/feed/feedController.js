@@ -49,7 +49,6 @@ angular.module('app.feed', ['feed.factory', 'ngCookies'])
       
       feedFactory.repProject(data)
         .then(function(project) {
-          console.log(project.data); // Test so we can check the rep
           self.projects.shift(); // Shift off the first project so we can move to next
         });
     };
@@ -64,7 +63,6 @@ angular.module('app.feed', ['feed.factory', 'ngCookies'])
       
       feedFactory.repProject(data)
         .then(function(project) {
-          console.log(project.data); // Test so we can check the rep
           self.projects.shift(); // Shift off the first project so we can move to next
         });
     };
@@ -79,7 +77,7 @@ angular.module('app.feed', ['feed.factory', 'ngCookies'])
 
       feedFactory.addContrib(data)
         .then(function(project) {
-          console.log(project.data); // Log the data so we can see that it worked.
+          self.projects.shift();
         });
     };
 
