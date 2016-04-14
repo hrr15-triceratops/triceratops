@@ -6,6 +6,11 @@ body {
   width: 70%;
 }
 
+.navbar-brand {
+  font-size: 28px;
+  font-weight: bold;
+}
+
 .description {
   padding: 0 25px 0 25px
 }
