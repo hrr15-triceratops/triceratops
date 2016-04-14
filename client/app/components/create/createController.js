@@ -1,5 +1,5 @@
 angular.module('app.create', ['create.factory'])
-  .controller('createController', ['createFactory', '$rootElement', '$location', function(createFactory, $rootElement, $location) {
+  .controller('createController', ['createFactory', '$location', function(createFactory, $location) {
     // This calls the factory function that will send a request to the server
     // to create a project.
     this.createProject = function() {
