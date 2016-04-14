@@ -1,5 +1,5 @@
 {
-  "name": "triceratops",
+  "name": "webloc",
   "version": "1.0.0",
   "description": "This is our GREENFIELD project",
   "main": "index.js",
@@ -10,17 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hrr15-triceratops/triceratops.git"
+    "url": "https://github.com/we-bloc/webloc.git"
   },
   "keywords": [
     "awesome"
   ],
-  "author": "triceratops",
+  "author": "webloc",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hrr15-triceratops/triceratops/issues"
+    "url": "https://github.com/we-bloc/webloc/issues"
   },
-  "homepage": "https://github.com/hrr15-triceratops/triceratops",
+  "homepage": "https://github.com/we-bloc/webloc",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.0",
