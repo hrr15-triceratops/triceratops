@@ -5,13 +5,32 @@ angular.module('app.feed', ['feed.factory', 'ngCookies'])
     var uid = $cookies.getAll().id;
     var name = $cookies.getAll().name;
 
-    // List of projects
+    // List of projects & our current user
     this.projects = [];
+    this.user = {
+      projects: [{id: "570bf4a9f03e315051590ce0"}]
+    };
+
+    // Grab the current logged in user from the db so we can access their array of projects
+    // feedFactory.getUser()
+    //   .then(function(user) {
+    //     self.user = user.data;
+    //   });
 
     // Grab the projects from the server
     feedFactory.getProjects()
       .then(function(projects) {
-        self.projects = projects.data;
+        self.projects = projects.data.filter(function(project) {
+          var found = false;
+          self.user.projects.forEach(function(userProject) {
+            if (userProject.id === project._id) {
+              found = true;
+            }
+          });
+          if (!found) {
+            return project;
+          }
+        });
         console.log(self.projects);
       });
 

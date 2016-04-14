@@ -26,9 +26,17 @@ angular.module('feed.factory', [])
       });
     };
 
+    var getUser = function(uid) {
+      return $http({
+        method: 'GET',
+        url: '/user/' + uid
+      });
+    };
+
     return {
       getProjects: getProjects,
       repProject: repProject,
-      addContrib: addContrib
+      addContrib: addContrib,
+      getUser: getUser
     };
   });
