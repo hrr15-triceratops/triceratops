@@ -101,7 +101,9 @@ exports.rep = function(req, res) {
         res.send(err);
       } else {
           user.projects.push({ id: projId, contrib: false });
-          res.send(user); //TODO: Update to make more useful after refactor to utils
+          user.save(function(err) {
+            res.send(user); //TODO: Update to make more useful after refactor to utils
+          });
       }
     });
   };

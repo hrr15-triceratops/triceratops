@@ -2,36 +2,41 @@ angular.module('app.feed', ['feed.factory', 'ngCookies'])
   .controller('feedController', ['feedFactory', '$cookies', function(feedFactory, $cookies) {
     // Hold onto context
     var self = this;
+
+    // Grab variables from cookies
     var uid = $cookies.getAll().id;
     var name = $cookies.getAll().name;
 
     // List of projects & our current user
     this.projects = [];
-    this.user = {
-      projects: [{id: "570bf4a9f03e315051590ce0"}]
-    };
+    this.user = {};
+
+    // Object containing the ids of the users projects
+    var userProjects = {};
 
     // Grab the current logged in user from the db so we can access their array of projects
-    // feedFactory.getUser()
-    //   .then(function(user) {
-    //     self.user = user.data;
-    //   });
+    feedFactory.getUser(uid)
+      .then(function(user) {
+        self.user = user.data;
+
+        // Build an object out of the user projects
+        self.user.projects.forEach(function(project) {
+          if (! (project.id in userProjects)) {
+            userProjects[project.id] = true;
+          }
+        });
+      });
+
+    // Make an object out of their contributions
+
 
     // Grab the projects from the server
     feedFactory.getProjects()
       .then(function(projects) {
         self.projects = projects.data.filter(function(project) {
-          var found = false;
-          self.user.projects.forEach(function(userProject) {
-            if (userProject.id === project._id) {
-              found = true;
-            }
-          });
-          if (!found) {
-            return project;
-          }
+          // Only return the projects that the user hasn't contributed to
+          return (!(project._id in userProjects));
         });
-        console.log(self.projects);
       });
 
     // function to handle positive rep
