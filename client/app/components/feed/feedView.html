@@ -31,7 +31,7 @@
       <img src="https://d1fj9gpaeca6ia.cloudfront.net/static/global/images/no_profile_photo.png" alt="" class="img-circle" height="140px" width="140px">
       <p>{{contrib}}</p>
     </div>
-    Join us and {{feed.projects[0].contributors.length - 3}} more contributors!
+    <span ng-if="feed.projects[0].contributors.length > 3">Join us and {{feed.projects[0].contributors.length - 3}} more contributors!</span>
   </div>
 
   <div class="text-center">
