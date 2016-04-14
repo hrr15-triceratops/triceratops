@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="dashboard">
+    <h1>Projects I am part of</h1>
+    <hr>
+    <div class="col-md-4 project-item" ng-repeat='project in dashboard.projects'>
+      <h4>{{ project.title }}</h4>
+      <div class="image">
+        <img src="{{ project.images[0] }}">
+      </div>
+    </div>
+  </div>
+  <div class='no-projects'>
+    <h4>you haven't selected any project you want to contribute to.</h4>
+    <h4>to take a second look at the projects again. <a href='#/feed'>click here</a></h4>
+
+  </div>
+  
+</div>
