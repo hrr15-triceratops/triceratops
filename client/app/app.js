@@ -59,6 +59,10 @@ angular.module('app', [
         controller: 'signInController',
         controllerAs: 'signIn',
         auth: false
+      })
+      .state('dashboard', {
+        url: '/dashboard',
+        templateUrl: 'app/components/dashboard/dashboard.html'
       });
   })
 
