@@ -26,9 +26,10 @@ body {
 }
 
 /**** sign up form ******/
-.sign-up {
+.forms {
   margin: 20px auto;
   width: 600px;
+  background: white;
 }
 .container .form-horizontal .control-label {
   text-align: left;
@@ -39,9 +40,9 @@ body {
 
 }
 
-.sign-up .btn, .input-group-btn .btn {
+.forms .btn, .input-group-btn .btn {
   border: 2px solid #009688;
 }
-.sign-up p {
+.forms p {
   color: #BDBDBD;
 }
