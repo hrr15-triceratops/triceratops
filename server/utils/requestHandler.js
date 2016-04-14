@@ -185,3 +185,14 @@ exports.signup = function(req, res) {
     };
   });
 };
+
+exports.user = function(req, res) {
+  var id = req.params.uid;
+
+  User.findById(id, function(err, user) {
+    if(err) {
+      res.send(err);
+    };
+    res.send(user);
+  });
+};

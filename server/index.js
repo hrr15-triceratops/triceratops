@@ -56,6 +56,7 @@ app.post('/create', utils.create);
 app.put('/contrib', utils.contrib);
 app.put('/rep', utils.rep);
 app.get('/projects', utils.projects);
+app.get('/user/:uid', utils.user);
 app.post('/signup', utils.signup);
 
 //Get server going
