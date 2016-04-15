@@ -1,12 +1,12 @@
 <!-- Up / Down Vote Begin -->
-<div class="col-md-2 col-xs-2" id="left">
+<div class="col-md-2 col-xs-2" id="left" ng-if="feed.projects.length">
     <img src="http://enditmovement.com/assets/images/x-red.png" height="140px" width="140px" ng-click="feed.deRep()" class="img-responsive pull-left">
 </div>
 
 <!-- Up / Down Vote End -->
 
 <!-- Begin Feed View -->
-<div class="col-md-8 col-xs-8 feed">
+<div class="col-md-8 col-xs-8 feed" ng-if="feed.projects.length">
   <h1 class="text-center">{{feed.projects[0].title}}</h1>
   <hr>
   <div class="row">
@@ -40,6 +40,16 @@
 </div>
 <!-- End Feed View -->
 
-<div class="col-md-2 col-xs-2" id="right">
+<div class="col-md-2 col-xs-2" id="right" ng-if='feed.projects.length'>
   <img src="http://www.clker.com/cliparts/D/z/C/2/q/E/check-mark-md.png" height="140px" width="140px" ng-click="feed.rep()" class="img-responsive pull-right">
+</div>
+<div class="container" ng-controller="feedController" ng-if='!feed.projects.length'>
+  <div class='no-projects'>
+    <h1><span>WeBloc</span></h1>
+    <h4>This is normally where we'd show you all the great projects waiting for your contributions!</h4>
+
+    <h4><a href='#/dashboard'>Click this link</a> to take at the projects to which you've contibuted</h4>
+
+     <h4><a href='#/create'>Click here</a> to create a project of your own!</h4>
+    </div>
 </div>
