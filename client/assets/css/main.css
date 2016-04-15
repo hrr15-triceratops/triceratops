@@ -21,6 +21,11 @@ body {
   background: white;
 }
 
+.email {
+  margin-top: 5px;
+  padding-right: 10px;
+}
+
 #left {
   margin-top: 35vh;
   text-align: left;

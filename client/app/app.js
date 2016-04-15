@@ -24,8 +24,8 @@ angular.module('app', [
   'ngAutocomplete',
   'app.signIn',
   'app.signUp', 
-  'app.dashboard'
-
+  'app.dashboard',
+  'app.navbar'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {

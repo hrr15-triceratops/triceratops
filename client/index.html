@@ -32,6 +32,7 @@
   <script src="/app/components/signup/SignUpService.js"></script>
   <script src="/app/components/dashboard/dashboardController.js"></script>
   <script src="/app/components/dashboard/dashboardService.js"></script>
+  <script src="/app/shared/navbarController.js"></script>
 
   <!-- Our Files -->
   <script src="/app/app.js"></script>
@@ -41,7 +42,7 @@
 </head>
   <body ng-app="app">
     <!-- Navigation bar -->
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top" ng-controller="navbarController">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -54,10 +55,15 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#/feed">View Feed</a></li>
+            <li><a href="#/create">Create</a></li>
             <li><a href="#/dashboard">Dashboard</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#/create">Create</a></li>
+            <li class="email" ng-if="emailFn()">Currently signed in as:
+              <br>
+              <b>{{emailFn()}}</b>
+            </li>
+            <li><a href="javascript:void(0)" ng-click="signout()" ng-if="emailFn()">Signout</a></li>
           </ul>
         </div>
       </div>

@@ -1,4 +1,4 @@
-angular.module('app.feed', ['feed.factory', 'ngCookies'])
+angular.module('app.feed', ['feed.factory', 'ngCookies', 'app.navbar'])
   .controller('feedController', ['feedFactory', '$cookies', function(feedFactory, $cookies) {
     // Hold onto context
     var self = this;
