@@ -14,7 +14,6 @@ angular.module('app.dashboard', ['dashboard.factory'])
     // Grab the current logged in user from the db so we can access their array of projects
     dashboardFactory.getUser(uid)
       .then(function(user) {
-        console.log(user);
         self.user = user.data;
 
         // Build an object out of the user contrib projects
@@ -23,7 +22,6 @@ angular.module('app.dashboard', ['dashboard.factory'])
             self.projectIds[project.id] = true;
           };
         });
-        console.log(self.projectIds);
       });
     // Grab the projects from the server
     dashboardFactory.getProjects()
