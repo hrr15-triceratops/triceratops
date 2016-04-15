@@ -19,6 +19,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-top: 20px;
   background: white;
+  padding-bottom: 15px;
 }
 
 .email {
@@ -34,6 +35,10 @@ body {
 #right {
   margin-top: 35vh;
   text-align: right;
+}
+span {
+  color: #009688;
+  font-weight: bold;
 }
 
 /**** sign up form ******/
@@ -64,9 +69,10 @@ body {
   padding: 20px;
 }
 .dashboard h1 {
-  text-align: center;
+  text-align: left;
   margin-bottom: 25px;
 }
+
 .dashboard h4 {
   margin-bottom: 20px;
   text-align: center;
