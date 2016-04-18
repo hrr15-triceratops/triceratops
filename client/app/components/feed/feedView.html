@@ -7,12 +7,15 @@
 
 <!-- Begin Feed View -->
 <div class="col-md-8 col-xs-8 feed" ng-if="feed.projects.length">
-  <h1 class="text-center">{{feed.projects[0].title}}</h1>
+  <!-- <h1 class="text-center">{{feed.projects[0].title}}</h1> -->
+  <div class="text-center">
+    <button class="btn btn-primary" ng-click="feed.addContrib()">Contribute</button>
+  </div>
   <hr>
   <div class="row">
     <!-- Repeat for every image, limited to 2. -->
-    <div class="col-md-6 text-center" ng-repeat="img in feed.projects[0].images | limitTo: 2 track by $index">
-      <img ng-src="{{img}}" err-src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg" class="img-rounded" height="70%" width="100%"> 
+    <div class="col-md-6 text-center feedImages" ng-repeat="img in feed.projects[0].images | limitTo: 2 track by $index">
+      <img ng-src="{{img}}" err-src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg" class="img-rounded" height="100%" width="100%"> 
     </div>
   </div>
   
@@ -32,10 +35,6 @@
       <p>{{contrib}}</p>
     </div>
     <span ng-if="feed.projects[0].contributors.length > 3">Join us and {{feed.projects[0].contributors.length - 3}} more contributors!</span>
-  </div>
-
-  <div class="text-center">
-    <button class="btn btn-raised btn-primary" ng-click="feed.addContrib()">Contribute</button>
   </div>
 </div>
 <!-- End Feed View -->
