@@ -11,6 +11,10 @@ angular.module('app.dashboard', ['dashboard.factory'])
     this.projects = [];
     this.user = {};
 
+    // Project to display on the page whenever a user clicks to show a project
+    this.chosenProject = {};
+    this.show = false;
+
     // Grab the current logged in user from the db so we can access their array of projects
     dashboardFactory.getUser(uid)
       .then(function(user) {
@@ -23,6 +27,7 @@ angular.module('app.dashboard', ['dashboard.factory'])
           };
         });
       });
+
     // Grab the projects from the server
     dashboardFactory.getProjects()
       .then(function(projects) {
@@ -31,4 +36,11 @@ angular.module('app.dashboard', ['dashboard.factory'])
           return (project._id in self.projectIds);
         });
       });
+
+    this.showProject = function(project) {
+      console.log(project);
+      this.chosenProject = project;
+      this.show = true;
+    };
+
   }]);

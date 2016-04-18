@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container" ng-if="!dashboard.show">
+  <!-- Display if user is contributing to projects -->
   <div class="dashboard" ng-if="dashboard.projects.length">
     <h1><span>WeProjects:</span> Contributing</h1>
     <hr>
@@ -7,16 +8,50 @@
       <div class="image">
         <img src="{{ project.images[0] }}">
       </div>
+      <p class="text-center"><a href="Javascript:void(0)" ng-click="dashboard.showProject(project)">View Project</a></p>
     </div>
   </div>
+
+  <!-- Display this if the user is not contributing to any projects -->
   <div class='no-projects' ng-if='!dashboard.projects.length'>
     <h3>Welcome to your Dashboard.</h3>
     <h4>This is normally where we'd show you all the projects to which you've contributed! </h4>
-
     <h4><a href='#/feed'>Click this link</a> to take a second look at the projects!</h4>
-
      <h4>If you don't see anything you feel passionate about, <a href='#/create'>click here</a> to create a project of your own!</h4>
-
   </div>
-  
+</div>
+
+<div class="container" ng-if="dashboard.show">
+  <div class="col-md-8 col-xs-8 col-md-offset-2 feed">
+    <h1 class="text-center">{{dashboard.chosenProject.title}}</h1>
+    <hr>
+    <div class="row">
+      <!-- Repeat for every image, limited to 2. -->
+      <div class="col-md-6 text-center" ng-repeat="img in dashboard.chosenProject.images | limitTo: 2 track by $index">
+        <img ng-src="{{img}}" err-src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg" class="img-rounded" height="70%" width="100%"> 
+      </div>
+    </div>
+    
+    
+    <!-- Pull in project description -->
+    <div class="row description">
+      <h3>{{dashboard.chosenProject.title}}</h3>
+      <p>{{dashboard.chosenProject.description}}</p>
+    </div>
+
+    <div class="text-center">
+      <h1 class="text-center">Contributors</h1>
+      <hr>
+      <!-- Repeat for every contributor, limited to 3. -->
+      <div class="col-md-4" ng-repeat="contrib in dashboard.chosenProject.contributors | limitTo: 3 track by $index">
+        <img src="https://d1fj9gpaeca6ia.cloudfront.net/static/global/images/no_profile_photo.png" alt="" class="img-circle" height="140px" width="140px">
+        <p>{{contrib}}</p>
+      </div>
+      <span ng-if="dashboard.chosenProject.contributors.length > 3">Join us and {{dashboard.chosenProject.contributors.length - 3}} more contributors!</span>
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-raised btn-primary" ng-click="dashboard.show = false">Return</button>
+    </div>
+  </div>
 </div>
