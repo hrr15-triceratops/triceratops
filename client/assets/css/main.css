@@ -98,8 +98,13 @@ span {
 }
 
 .feed .row {
-  margin-top: 15px;
-  text-aling: center;
-}.forms .signinError {
-  color: red;
+  text-align: center;
+}
+
+.forms .signinError {
+  color: red;  
+}
+
+.feed h2 {
+  text-transform: uppercase;
 }
