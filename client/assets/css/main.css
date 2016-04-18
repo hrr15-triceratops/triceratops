@@ -56,7 +56,8 @@ span {
 
 }
 
-.forms .btn, .input-group-btn .btn {
+/*.forms .btn, .input-group-btn .btn, */
+.btn:not(.btn-raised).btn-primary {
   border: 2px solid #009688;
   /*background: white;*/
   color: #009688;
@@ -87,6 +88,23 @@ span {
   width: 100%;
 }
 
+/******feed******/
+.feedImages {
+  height: 200px;
+  width: 35%;
+  display: inline-block;
+  margin: 10px 10px;
+  /*margin-left: 10%;*/
+}
+
+.feed .row {
+  text-align: center;
+}
+
 .forms .signinError {
-  color: red;
+  color: red;  
+}
+
+.feed h2 {
+  text-transform: uppercase;
 }

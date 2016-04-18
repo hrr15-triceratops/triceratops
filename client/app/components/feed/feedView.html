@@ -6,36 +6,36 @@
 <!-- Up / Down Vote End -->
 
 <!-- Begin Feed View -->
-<div class="col-md-8 col-xs-8 feed" ng-if="feed.projects.length">
-  <h1 class="text-center">{{feed.projects[0].title}}</h1>
-  <hr>
-  <div class="row">
+<div class="container col-md-8 col-xs-8 feed" ng-if="feed.projects.length">
+  <!-- <h1 class="text-center">{{feed.projects[0].title}}</h1> -->
+   <div class="row description text-center">
+    <h2>{{feed.projects[0].title}}</h2>
+    <hr>
+    <h4>{{feed.projects[0].location}}</h4>
+  </div>
+  <div class="row text-center">
     <!-- Repeat for every image, limited to 2. -->
-    <div class="col-md-6 text-center" ng-repeat="img in feed.projects[0].images | limitTo: 2 track by $index">
-      <img ng-src="{{img}}" err-src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg" class="img-rounded" height="70%" width="100%"> 
+    <div class="text-center feedImages" ng-repeat="img in feed.projects[0].images | limitTo: 2 track by $index">
+      <img ng-src="{{img}}" err-src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg" class="img-rounded" height="100%" width="100%"> 
     </div>
   </div>
-  
+  <div class="text-center">
+    <button class="btn btn-primary" ng-click="feed.addContrib()">Contribute</button>
+  </div>
   
   <!-- Pull in project description -->
-  <div class="row description">
-    <h3>{{feed.projects[0].title}}</h3>
+  <div class="row description text-center">
     <p>{{feed.projects[0].description}}</p>
   </div>
-
+  <hr>
   <div class="text-center">
-    <h1 class="text-center">Contributors</h1>
-    <hr>
+    <h3 class="text-center">Contributors</h3>
     <!-- Repeat for every contributor, limited to 3. -->
     <div class="col-md-4" ng-repeat="contrib in feed.projects[0].contributors | limitTo: 3 track by $index">
-      <img src="https://d1fj9gpaeca6ia.cloudfront.net/static/global/images/no_profile_photo.png" alt="" class="img-circle" height="140px" width="140px">
+      <img src="https://d1fj9gpaeca6ia.cloudfront.net/static/global/images/no_profile_photo.png" alt="" class="img-circle" height="50px" width="50px">
       <p>{{contrib}}</p>
     </div>
     <span ng-if="feed.projects[0].contributors.length > 3">Join us and {{feed.projects[0].contributors.length - 3}} more contributors!</span>
-  </div>
-
-  <div class="text-center">
-    <button class="btn btn-raised btn-primary" ng-click="feed.addContrib()">Contribute</button>
   </div>
 </div>
 <!-- End Feed View -->
