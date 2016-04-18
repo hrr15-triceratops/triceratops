@@ -1,5 +1,10 @@
 angular.module('app.signIn', ['signIn.factory', 'ngCookies', 'app.navbar'])
   .controller('signInController', ['signInFactory', '$cookies', '$location', 'navbarFactory', function(signInFactory, $cookies, $location, navbarFactory) {
+    // Hold onto context
+    var self = this;
+    
+    // Variable to hold failed logins
+    this.failed = false;
 
     this.signIn = function() {
       var data = {
@@ -10,18 +15,23 @@ angular.module('app.signIn', ['signIn.factory', 'ngCookies', 'app.navbar'])
       signInFactory
         .login(data)
         .then(function(user) {
-          if(!user) {
-            return console.log('Login failed');
-          }
           // Set our information in the cookie
           $cookies.put('name', user.data.firstName);
           $cookies.put('id', user.data._id);
           $cookies.put('email', user.data.email);
 
-          console.log(user.data.email);
+          // Update the email on the screen
           navbarFactory.updateEmail(user.data.email);
+
           // Redirect user to the feed
           $location.path('/feed');
+        })
+        .catch(function() {
+          // Catch invalid login attempts and display message on page
+          self.failed = true;
+
+          self.email = '';
+          self.password = '';
         });
     };
   }]);
