@@ -92,12 +92,14 @@ span {
 .feedImages {
   height: 200px;
   width: 35%;
-  margin-left: 10%;
+  display: inline-block;
+  margin: 10px 10px;
+  /*margin-left: 10%;*/
 }
 
 .feed .row {
-  margin: 10px auto;
-}
-.forms .signinError {
+  margin-top: 15px;
+  text-aling: center;
+}.forms .signinError {
   color: red;
 }
