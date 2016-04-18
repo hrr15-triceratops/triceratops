@@ -17,7 +17,7 @@
   > We provide a simple and elegant platform for users to share projects and gauge interest in those projects. We allow inspired community members the freedom to contribute how and when they want! 
 
 ## Quote from You ##
-  > "From personal experience, when one is involved in ones community -- when one maintains and fosters relationships with one's neighbors, the result is a more caring, beautiful and fun community. WeBloc seeks to change the way we view communities and our power to effect change within them." -M. Keith- 
+  > "From personal experience, when one is involved in ones community -- when one maintains and fosters relationships with one's neighbors, the result is a more caring, beautiful and fun community. WeBloc seeks to change the way we view communities and our power to affect change within them." -M. Keith- 
 
 ## How to Get Started ##
   > Head to WeBloc.co
