@@ -16,29 +16,36 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## TBD.io ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+## WeBloc.co ##
+  > We are WeBloc
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > WeBloc. For communities to build better communities. 
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > WeBloc is a web platform for community members to host and join projects in their communities FOR their communities. Users are able to view a list of projects, add positive feedback, 'Meh' feedback or offer to contribute to projects. Additionally, users can create their own projects and view projects they've agreed to contribute to!! 
 
 ## Problem ##
-  > It's difficult and cumbersome to identify and coordinate projects within a community.
+  > It's difficult and cumbersome to identify and coordinate projects within a community. People are generally too busy to take on large chunks of project coordination.
 
 ## Solution ##
-  > We provide a simple and elegant platform for users to share projects and gauge interest in those projects.
+  > We provide a simple and elegant platform for users to share projects and gauge interest in those projects. We allow inspired community members the freedom to contribute how and when they want! 
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "From personal experience, when one is involved in ones community -- when one maintains and fosters relationships with one's neighbors, the result is a more caring, beautiful and fun community. WeBloc seeks to change the way people view their communities and their power to effect change within them." -M. Keith- 
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Head to WeBloc.co
+  > Create an account
+  > Browse projects in your feed
+  > Click green checkmark for "Yay, I like it!"
+  > Click red X for "Meh, don't think we should be doing this."
+  > Click "Contribute" for "Heck yes! I'm in. I want to be a part of this!"
+  > Create a project
+  > View all of your progress in your Dashboard! 
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "Ever since finding out about WeBloc, I find myself looking at my community in a totally different way. Where before, I used to get bummed out when I saw the community park a mess, now I look at those experiences as opportunities to bring people together!" -Stan McPherson-
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Get up, get out and get together. We can WeBloc. 
