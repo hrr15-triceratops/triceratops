@@ -15,8 +15,8 @@
   </div>
   <div class="row text-center">
     <!-- Repeat for every image, limited to 2. -->
-    <div class="text-center feedImages" ng-repeat="img in feed.projects[0].images | limitTo: 2 track by $index">
-      <img ng-src="{{img}}" err-src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg" class="img-rounded" height="100%" width="100%"> 
+    <div class="text-center col-md-6" ng-repeat="img in feed.projects[0].images | limitTo: 2 track by $index">
+      <img ng-src="{{img}}" err-src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg" class="img-rounded" height="70%" width="100%"> 
     </div>
   </div>
   <div class="text-center">
