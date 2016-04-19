@@ -193,7 +193,7 @@ exports.users = function(req, res) {
   // Retrieve all the Users in the DB
   User.find(function(err, users) {
     if (err) {
-      res.send(err);
+      res.send("this is an error from users util", err);
     } else {
       // Send array with all user objects
       res.send(users);  

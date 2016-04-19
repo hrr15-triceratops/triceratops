@@ -25,7 +25,8 @@ angular.module('app', [
   'app.signIn',
   'app.signUp', 
   'app.dashboard',
-  'app.navbar'
+  'app.navbar',
+  'isteven-multi-select'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
