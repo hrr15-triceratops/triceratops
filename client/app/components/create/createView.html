@@ -3,7 +3,7 @@
 <div class="container forms" id="createForm">
   <form class="form-horizontal">
     <fieldset>
-      <legend class="text-center">Create</legend>
+      <legend class="text-left"><span>WE: </span>Create</legend>
       <!-- Title input field -->
       <div class="form-group">
         <label for="inputTitle" class="col-md-2 control-label">Title</label>
@@ -36,15 +36,18 @@
           <textarea class="form-control" row="3" id="inputDescription"ng-model="create.description"></textarea>
         </div>
       </div>
-      
 
-      <!-- Contributors input field -->
-      <div class="form-group">
+      <div class="form-group"> 
         <label for="inputContribs" class="col-md-2 control-label">Contributors</label>
-        <div class="col-md-10">
-          <textarea class="form-control" row="3" id="inputContribs"ng-model="create.contribs"></textarea>
+        <div class="contribs" isteven-multi-select    
+          input-model="create.users"    
+          output-model="create.contributors"
+          button-label="firstName"
+          item-label="firstName lastName email"
+          tick-property="ticked">
         </div>
       </div>
+
       
 
       <!-- Images input field -->
@@ -53,6 +56,7 @@
         <div class="col-md-10">
           <textarea class="form-control" row="3" id="inputImages"ng-model="create.images"></textarea>
         </div>
+        <p style="padding-left:15px"> *please submit image urls separated by a new line</p>
       </div>
       
 

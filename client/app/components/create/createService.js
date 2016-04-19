@@ -10,7 +10,15 @@ angular.module('create.factory', [])
       });
     };
 
+    var getUsers = function() {
+      return $http({
+        method: 'GET',
+        url: '/users'
+      });
+    };
+
     return {
-      createProject: createProject
+      createProject: createProject,
+      getUsers: getUsers
     };
   });
