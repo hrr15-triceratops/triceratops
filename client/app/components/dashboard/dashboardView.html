@@ -1,22 +1,54 @@
-<div class="container">
+<div class="container" ng-if="!dashboard.show">
+  <!-- Display if user is contributing to projects -->
   <div class="dashboard" ng-if="dashboard.projects.length">
     <h1><span>WeProjects:</span> Contributing</h1>
     <hr>
     <div class="col-md-4 project-item" ng-repeat='project in dashboard.projects'>
-      <h4>{{ project.title }}</h4>
+      <h4><a href="Javascript:void(0)" ng-click="dashboard.showProject(project)">{{ project.title }}</a></h4>
       <div class="image">
-        <img src="{{ project.images[0] }}">
+        <a href="Javascript:void(0)" ng-click="dashboard.showProject(project)"><img src="{{ project.images[0] }}" err-src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg"></a>
       </div>
     </div>
   </div>
+
+  <!-- Display this if the user is not contributing to any projects -->
   <div class='no-projects' ng-if='!dashboard.projects.length'>
     <h3>Welcome to your Dashboard.</h3>
     <h4>This is normally where we'd show you all the projects to which you've contributed! </h4>
-
     <h4><a href='#/feed'>Click this link</a> to take a second look at the projects!</h4>
-
      <h4>If you don't see anything you feel passionate about, <a href='#/create'>click here</a> to create a project of your own!</h4>
+  </div>
+</div>
 
+<div class="container col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2 feed" ng-if="dashboard.show">
+  <!-- <h1 class="text-center">{{feed.projects[0].title}}</h1> -->
+   <div class="row description text-center">
+    <h2>{{dashboard.chosenProject.title}}</h2>
+    <hr>
+    <h4>{{dashboard.chosenProject.location}}</h4>
+  </div>
+  <div class="row text-center">
+    <!-- Repeat for every image, limited to 2. -->
+    <div class="text-center col-md-6" ng-repeat="img in dashboard.chosenProject.images | limitTo: 2 track by $index">
+      <img ng-src="{{img}}" err-src="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg" class="img-rounded" height="70%" width="100%"> 
+    </div>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-primary" ng-click="dashboard.show = false">Return</button>
   </div>
   
+  <!-- Pull in project description -->
+  <div class="row description text-center">
+    <p>{{dashboard.chosenProject.description}}</p>
+  </div>
+  <hr>
+  <div class="text-center">
+    <h3 class="text-center">Contributors</h3>
+    <!-- Repeat for every contributor, limited to 3. -->
+    <div class="col-md-4" ng-repeat="contrib in dashboard.chosenProject.contributors | limitTo: 3 track by $index">
+      <img src="https://d1fj9gpaeca6ia.cloudfront.net/static/global/images/no_profile_photo.png" alt="" class="img-circle" height="50px" width="50px">
+      <p>{{contrib}}</p>
+    </div>
+    <span ng-if="feed.projects[0].contributors.length > 3">Join us and {{dashboard.chosenProject.contributors.length - 3}} more contributors!</span>
+  </div>
 </div>
